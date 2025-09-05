@@ -25,7 +25,7 @@ const height = container.clientHeight;
 // DD. USER_METADATA
 // user_meta = [str, ...]
 // interp. a collection of countries to map against the base world map to change their color
-fetch("https://raw.githubusercontent.com/ChemAI-Group/website/main/metadataMap.txt")
+fetch("https://raw.githubusercontent.com/ChemAI-Lab/website/refs/heads/main/metadataMap.txt")
     .then(response => response.text())
     .then(data => {
         // Parse the text data (list of countries)

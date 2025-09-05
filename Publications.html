@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" href="./Media/header_logo.png" type="image/png">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Publications</title>
 </head>
@@ -16,7 +17,48 @@
         <div class="row align-items-center mb-5 content-BoxGCU undergradStyle hidden">
             <div class="col-md-7">
                 <div class="row">
-                    <h3 class="customh1"> Softmax parameterization of the occupation numbers for natural orbital functionals
+                    <h3 class="customh1"> MOLPIPx: An end-to-end differentiable package for permutationally invariant
+                        polynomials in Python and Rust
+                    </h3>
+                    <div class="col d-flex justify-content-end">
+                        <h4>Manuel S. Drehwald, Asma Jamali, Rodrigo A. Vargas-Hernández (2025)</h4>
+                    </div>
+                    <hr>
+                </div>
+                <div class="row">
+                    In this work, we present MOLPIPx, a versatile library designed to seamlessly integrate
+                    permutationally invariant polynomials with modern machine learning frameworks, enabling the
+                    efficient development of linear models, neural networks, and Gaussian process models. These
+                    methodologies are widely employed for parameterizing potential energy surfaces across diverse
+                    molecular systems. MOLPIPx leverages two powerful automatic differentiation engines—JAX and
+                    EnzymeAD-Rust—to facilitate the efficient computation of energy gradients and higher-order
+                    derivatives, which are essential for tasks such as force field development and dynamic simulations.
+                </div>
+                <div class="row">
+                    <div class="col-6"></div>
+                    <div class="col-3 content-BoxGCU d-flex justify-content-center">
+                        <a href="https://doi.org/10.1063/5.0250837" class="customlink">DOI</a>
+                    </div>
+                    <div class="col-3 content-BoxGCU d-flex justify-content-center">
+                        <a href="https://github.com/ChemAI-Lab/molpipx"
+                            class="customlink">GitHub</a>
+                    </div>
+
+                    <!-- <div class="col-3 content-BoxGCU d-flex justify-content-center">
+                        <a href="#" class="customlink">Ref2</a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-md-5 text-end">
+                <img src="./Media/Papers_Thumbnails/Asma_2025.png" class="img-fluid" alt="">
+            </div>
+        </div>
+        <!-- PAPER 2 -->
+        <div class="row align-items-center mb-5 content-BoxGCU undergradStyle hidden">
+            <div class="col-md-7">
+                <div class="row">
+                    <h3 class="customh1"> Softmax parameterization of the occupation numbers for natural orbital
+                        functionals
                     </h3>
                     <div class="col d-flex justify-content-end">
                         <h4>L. Franco et. al (2024)</h4>
@@ -24,10 +66,17 @@
                     <hr>
                 </div>
                 <div class="row">
-                    Within the framework of natural orbital functional theory, having a convenient representation of the optimization function becomes critical for the computational performance of the calculation. 
-                    Recognizing this, we propose an innovative parametrization of the occupation numbers that takes advantage of the electron-pairing approach used in Piris natural orbital functionals, through the adoption of the softmax function, a pivotal component in modern deep-learning models. 
-                    Our approach not only ensures adherence to the N-representability of the first-order reduced density matrix (1RDM) but also significantly enhances the computational efficiency of 1RDM functional theory calculations. 
-                    The effectiveness of this alternative parameterization approach was assessed using the W4-17-MR molecular set, which demonstrated faster and robust convergence compared to previous implementations. 
+                    Within the framework of natural orbital functional theory, having a convenient representation of the
+                    optimization function becomes critical for the computational performance of the calculation.
+                    Recognizing this, we propose an innovative parametrization of the occupation numbers that takes
+                    advantage of the electron-pairing approach used in Piris natural orbital functionals, through the
+                    adoption of the softmax function, a pivotal component in modern deep-learning models.
+                    Our approach not only ensures adherence to the N-representability of the first-order reduced density
+                    matrix (1RDM) but also significantly enhances the computational efficiency of 1RDM functional theory
+                    calculations.
+                    The effectiveness of this alternative parameterization approach was assessed using the W4-17-MR
+                    molecular set, which demonstrated faster and robust convergence compared to previous
+                    implementations.
                 </div>
                 <div class="row">
                     <div class="col-6"></div>
@@ -55,9 +104,14 @@
                     <hr>
                 </div>
                 <div class="row">
-                    Orbital-free density functional theory (OF-DFT) for real-space systems has historically depended on Lagrange optimization techniques, primarily due to the inability of previously proposed electron density ansatze to ensure the normalization constraint. 
-                    This study illustrates how leveraging contemporary generative models, notably normalizing flows (NFs), can surmount this challenge. We pioneer a Lagrangian-free optimization framework by employing these machine learning models as ansatze for the electron density. 
-                    This novel approach also integrates cutting-edge variational inference techniques and equivariant deep learning models, offering an innovative alternative to the OF-DFT problem. 
+                    Orbital-free density functional theory (OF-DFT) for real-space systems has historically depended on
+                    Lagrange optimization techniques, primarily due to the inability of previously proposed electron
+                    density ansatze to ensure the normalization constraint.
+                    This study illustrates how leveraging contemporary generative models, notably normalizing flows
+                    (NFs), can surmount this challenge. We pioneer a Lagrangian-free optimization framework by employing
+                    these machine learning models as ansatze for the electron density.
+                    This novel approach also integrates cutting-edge variational inference techniques and equivariant
+                    deep learning models, offering an innovative alternative to the OF-DFT problem.
                 </div>
                 <div class="row">
                     <div class="col-6"></div>
@@ -65,7 +119,8 @@
                         <a href="https://arxiv.org/abs/2404.08764" class="customlink">arxiv</a>
                     </div>
                     <div class="col-3 content-BoxGCU d-flex justify-content-center">
-                        <a href="https://github.com/RodrigoAVargasHdz/ofdft_normalizing-flows" class="customlink">GitHub</a>
+                        <a href="https://github.com/RodrigoAVargasHdz/ofdft_normalizing-flows"
+                            class="customlink">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -74,7 +129,7 @@
             </div>
         </div>
 
-                <!-- PAPER 1 -->
+        <!-- PAPER 1 -->
         <div class="row align-items-center mb-5 content-BoxGCU undergradStyle hidden">
             <div class="col-md-7">
                 <div class="row">

@@ -6,3 +6,5 @@ India
 Russia
 United States of America
 USA
+Colombia
+Chile

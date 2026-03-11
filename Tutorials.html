@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="./Media/header_logo.png" type="image/png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <style>
+        .country {
+            fill: #5b6871;
+            stroke: #8899a6;
+            stroke-width: 0.5px;
+        }
+
+        .country-Color {
+            fill: #8edee1;
+            stroke: #88c2c4;
+            stroke-width: 1px;
+        }
+
+        .country-Color:hover {
+            fill: #4ad043;
+        }
+
+        #mapPosition {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <title>External Links</title>
+</head>
+
+<body>
+
+    <!-- ############### Insert NAVBAR with jQuery ############## -->
+    <div id="navbarJQ"></div>
+
+
+    <!-- ############### SECTION 1 ############## -->
+    <section class="container mb-1 content-BoxGCUExternal " style="background: #2b353e;">
+        <div class="row align-items-center content-BoxGCUExternal">
+            <div class="col">
+                <a href="https://youtu.be/qoTbgTcGaEw?si=RgBLnO_Te4KmA3iZ" class="customlink">
+                    <h3>Deploying Jupyter book websites under 15 minutes with Python and Node</h3>
+                </a>
+                <hr>
+
+                <p>
+                    In this tutorial, we will walk through the steps to deploy a Jupyter Book website using
+                    Python and Node.js. Jupyter Book is an open-source tool that allows you to create beautiful,
+                    publication-quality books and documents from Jupyter Notebooks and Markdown files. By the
+                    end of this tutorial, you will have a fully functional Jupyter Book website deployed and
+                    accessible online.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    
+
+    <!-- ############### FOOTER ############## -->
+    <div id="footerJQ"></div>
+
+    <!-- ################ SCRIPTS ################################### -->
+    <script>
+        $("#navbarJQ").load("navbar.html");
+        $("#footerJQ").load("footer.html");
+    </script>
+    <script src="appMap.js"></script>
+</body>
+
+</html>

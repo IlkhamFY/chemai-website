@@ -41,10 +41,3 @@ To make the site highly maintainable by future lab members, all core data is dyn
 
 Adding a new individual or publication is as simple as creating a new `.json` file inside the appropriate directory conforming to the documented schema—the Astro build engine will automatically sort, hierarchically rank, and layout the entries.
 
----
-<br/>
-<div align="center">
-  <a href="https://www.mcmaster.ca/">
-    <img src="https://upload.wikimedia.org/wikipedia/en/5/53/McMaster_University_logo.svg" alt="McMaster University" width="150" />
-  </a>
-</div>

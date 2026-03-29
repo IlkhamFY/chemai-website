@@ -6,7 +6,10 @@ const allNews = await getCollection('news');
 const sortedNews = allNews.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<Layout title="News" description="Latest updates, papers, and announcements from the ChemAI Lab.">
+<Layout
+  title="News"
+  description="News and announcements from ChemAI Laboratory at McMaster: new papers, talks, openings, and updates for the Chem AI group and collaborators."
+>
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 max-w-4xl">
     
     <div class="mb-16">

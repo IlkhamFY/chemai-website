@@ -6,31 +6,125 @@ import '../styles/global.css';
 export interface Props {
   title: string;
   description?: string;
+  /** When true, `title` is the full `<title>` text (no ` | ChemAI Lab` suffix). */
+  titleIsFull?: boolean;
+  /** Absolute URL for Open Graph / Twitter (defaults to the site hero GIF). */
+  ogImage?: string;
+  /** Set true for draft pages that should not be indexed. */
+  noindex?: boolean;
 }
 
-const { title, description = "ChemAI Lab at McMaster University. AI for quantum chemistry, many-body physics, and materials discovery." } = Astro.props;
-const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
+const {
+  title,
+  description = 'ChemAI Laboratory at McMaster University. AI and machine learning for quantum chemistry, many-body physics, and materials discovery.',
+  titleIsFull = false,
+  ogImage,
+  noindex = false,
+} = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+const siteOrigin = (Astro.site instanceof URL ? Astro.site.href : String(Astro.site ?? 'https://ilkhamfy.github.io')).replace(
+  /\/$/,
+  '',
+);
+const siteBaseHref = `${siteOrigin}${baseUrl}`;
+const canonicalURL = new URL(Astro.url.pathname, `${siteOrigin}/`);
+const documentTitle = titleIsFull ? title : `${title} | ChemAI Lab`;
+const ogImageUrl = ogImage ?? `${siteBaseHref}/Media/chemai_anim.gif`;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ResearchOrganization',
+      '@id': `${siteBaseHref}/#organization`,
+      name: 'ChemAI Laboratory',
+      alternateName: [
+        'ChemAI Lab',
+        'Chem AI Lab',
+        'McMaster ChemAI',
+        'ChemAI research group McMaster',
+      ],
+      url: `${siteBaseHref}/`,
+      description,
+      parentOrganization: {
+        '@type': 'CollegeOrUniversity',
+        name: 'McMaster University',
+        sameAs: 'https://www.mcmaster.ca/',
+      },
+      department: {
+        '@type': 'Organization',
+        name: 'Department of Chemistry & Chemical Biology',
+      },
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '1280 Main St W',
+        addressLocality: 'Hamilton',
+        addressRegion: 'ON',
+        postalCode: 'L8S 4L8',
+        addressCountry: 'CA',
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteBaseHref}/#website`,
+      url: `${siteBaseHref}/`,
+      name: 'ChemAI Lab',
+      alternateName: 'ChemAI Laboratory McMaster',
+      description,
+      publisher: { '@id': `${siteBaseHref}/#organization` },
+      inLanguage: 'en-CA',
+    },
+    {
+      '@type': 'Person',
+      '@id': `${siteBaseHref}/#pi`,
+      name: 'Rodrigo A. Vargas-Hernández',
+      alternateName: ['Rodrigo Vargas-Hernández', 'Rodrigo Vargas McMaster'],
+      jobTitle: 'Principal Investigator',
+      worksFor: { '@id': `${siteBaseHref}/#organization` },
+      affiliation: { '@id': `${siteBaseHref}/#organization` },
+      sameAs: [
+        'https://scholar.google.com/citations?user=RodrigoAVargas',
+        'https://github.com/RodrigoAVargasHdz',
+        'https://twitter.com/RoVargasHdz',
+      ],
+    },
+  ],
+});
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en-CA">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href={`${baseUrl}/favicon.svg`} />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} | ChemAI Lab</title>
+    <title>{documentTitle}</title>
     <meta name="description" content={description} />
-    <!-- Open Graph Metadata -->
-    <meta property="og:title" content={`${title} | ChemAI Lab`} />
+    <link rel="canonical" href={canonicalURL.href} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <!-- Open Graph -->
+    <meta property="og:title" content={documentTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.site} />
-    
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:locale" content="en_CA" />
+    <meta property="og:site_name" content="ChemAI Lab" />
+    <meta property="og:image" content={ogImageUrl} />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={documentTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <script type="application/ld+json" set:html={jsonLd} />
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="flex flex-col min-h-screen bg-transparent antialiased selection:bg-accent/20">
     <Navbar />

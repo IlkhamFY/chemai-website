@@ -8,7 +8,10 @@ const allPublications = await getCollection('publications');
 const sortedPublications = allPublications.sort((a, b) => b.data.year - a.data.year);
 ---
 
-<Layout title="Publications" description="Publications and research output from the ChemAI Lab.">
+<Layout
+  title="Publications"
+  description="Publications from the ChemAI Laboratory (McMaster University): papers on machine learning, quantum chemistry, materials informatics, and computational physics."
+>
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex max-w-7xl flex-col">
     
     <div class="mb-16">

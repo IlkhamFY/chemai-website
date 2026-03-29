@@ -4,7 +4,11 @@ const rawBase = import.meta.env.BASE_URL;
 const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
 ---
 
-<Layout title="Home">
+<Layout
+  title="ChemAI Lab — McMaster University AI & quantum chemistry research group"
+  titleIsFull
+  description="ChemAI Laboratory at McMaster University: AI for quantum chemistry, materials & many-body physics. Research group of Dr. Rodrigo Vargas-Hernández, Chemistry & Chemical Biology, Hamilton ON."
+>
   <section class="relative overflow-hidden bg-background">
     <!-- Abstract background elements (substituting heavy p5.js with pure CSS shapes) -->
     <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
@@ -14,12 +18,15 @@ const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10 flex flex-col md:flex-row items-center gap-12">
       <div class="flex-1 space-y-8">
-        <h1 class="text-4xl md:text-5xl lg:text-[4.25rem] font-heading font-semibold text-foreground leading-[1.05] tracking-tight">
+        <h1 class="text-4xl md:text-5xl lg:text-[4.25rem] font-heading font-semibold text-foreground leading-[1.08] tracking-tight">
+          <span class="block text-base md:text-lg font-medium text-muted-foreground tracking-normal mb-3 md:mb-4">
+            ChemAI Laboratory · McMaster University
+          </span>
           <span class="bg-gradient-to-br from-accent to-primary bg-clip-text text-transparent pr-[0.02em]">AI</span> for quantum chemistry, many-body physics, and materials discovery.
         </h1>
-        
+
         <p class="text-lg md:text-xl text-muted-foreground font-light max-w-2xl leading-relaxed">
-          The ChemAI Lab at McMaster University integrates state-of-the-art machine learning with quantum chemistry and materials science to push the boundaries of computational discovery.
+          Led by <strong class="font-medium text-foreground">Dr. Rodrigo A. Vargas-Hernández</strong>, the ChemAI group combines modern machine learning with quantum chemistry and materials science—part of McMaster’s AI and computational chemistry community in Hamilton, Ontario.
         </p>
 
         <div class="flex flex-wrap gap-4 pt-4">

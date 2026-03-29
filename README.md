@@ -4,8 +4,6 @@
     <source media="(prefers-color-scheme: light)" srcset="astro-site/public/Media/github_logo_light.svg">
     <img src="astro-site/public/Media/github_logo_light.svg" alt="ChemAI Laboratory Logo" width="300" />
   </picture>
-  <br/>
-  <p><strong>McMaster University</strong></p>
 </div>
 
 ---

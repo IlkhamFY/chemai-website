@@ -5,12 +5,17 @@
       <stop offset="100%" stop-color="#f8fafc" stop-opacity="0.3" />
     </linearGradient>
     <style>
-      .chem { font-family: system-ui, -apple-system, sans-serif; font-weight: 900; font-size: 64px; fill: #f8fafc; letter-spacing: -3.5px; }
+      .chem { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 900; font-size: 64px; fill: #f8fafc; }
       .dot { fill: #fb923c; }
-      .lab { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 19px; fill: #94a3b8; letter-spacing: 12px; }
+      .lab { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 19px; fill: #94a3b8; }
     </style>
   </defs>
-  <text x="10" y="65" class="chem">CHEM<tspan class="dot">.</tspan>AI</text>
-  <rect x="14" y="80" width="242" height="5" rx="2.5" fill="url(#lineDark)" />
-  <text x="17" y="112" class="lab">LABORATORY</text>
+  <!-- CHEM.AI - Locked to 250px width -->
+  <text x="10" y="65" class="chem" textLength="250" lengthAdjust="spacing">CHEM<tspan class="dot">.</tspan>AI</text>
+  
+  <!-- Divider - Exactly 250px wide, starting at same X -->
+  <rect x="10" y="80" width="250" height="4" rx="2" fill="url(#lineDark)" />
+  
+  <!-- LABORATORY - Justified to exactly 250px width using character spacing -->
+  <text x="10" y="108" class="lab" textLength="250" lengthAdjust="spacing">LABORATORY</text>
 </svg>

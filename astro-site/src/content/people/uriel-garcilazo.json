@@ -1,0 +1,10 @@
+{
+  "name": "Uriel Garcilazo Cruz",
+  "role": "M.Sc. Student",
+  "email": "garcilau@mcmaster.ca",
+  "links": [
+    { "label": "Website", "url": "https://urielgarcilazo.com/" },
+    { "label": "GitHub", "url": "https://github.com/UGarCil" }
+  ],
+  "image": "/Media/team_fotos/UrielGarcilazo.png"
+}

@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const courses = [
+  {
+    term: "Fall 2025",
+    title: "CHEM 3PC3 - Mathematical Tools for Chemical Problems",
+    url: "https://chemai-lab.github.io/Math4Chem/intro.html"
+  },
+  {
+    term: "Winter 2026",
+    title: "CHEM 799 - AI Tools for Materials Science",
+    url: "https://chemai-lab.github.io/AI4Chem/"
+  }
+];
+---
+
+<Layout title="Teaching" description="Courses and educational materials provided by the ChemAI Lab.">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 max-w-4xl flex-grow">
+    
+    <div class="mb-16">
+      <h1 class="text-4xl md:text-5xl font-heading font-semibold text-primary mb-4 tracking-tight">Teaching</h1>
+      <p class="text-lg text-muted-foreground font-light">
+        Academic courses and instructional materials.
+      </p>
+    </div>
+
+    <div class="space-y-8">
+      {courses.map(course => (
+        <section class="glass-panel p-8 md:p-10 rounded-2xl border border-border/60 hover-lift relative overflow-hidden group">
+          <div class="absolute -right-10 -top-10 w-48 h-48 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-500 pointer-events-none"></div>
+
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-accent mb-3 relative z-10">{course.term}</h3>
+          
+          <h2 class="text-2xl md:text-3xl font-heading font-semibold text-foreground mb-6 relative z-10">
+            <a href={course.url} target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors hover:underline underline-offset-4 decoration-accent/50">
+              {course.title}
+            </a>
+          </h2>
+          
+          <div class="relative z-10">
+            <a href={course.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-2.5 border border-primary/20 text-sm font-medium rounded-md text-primary bg-primary/5 hover:bg-primary hover:text-white transition-all shadow-sm">
+              View Course Material &rarr;
+            </a>
+          </div>
+        </section>
+      ))}
+    </div>
+
+  </div>
+</Layout>

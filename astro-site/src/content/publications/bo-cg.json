@@ -1,0 +1,13 @@
+{
+  "title": "Bayesian Optimization for High-Dimensional Coarse-Grained Model Parameterization: A Case Study on Pebax Polymer",
+  "authors": "Carlos A. Martins Jr, Daniela A. Damasceno, Keat Yung Hue, Caetano Rodrigues Miranda, Erich A. Müller, and Rodrigo A. Vargas-Hernández",
+  "year": 2026,
+  "abstract": "In this work, we present a Bayesian optimization framework for parameterizing high-dimensional coarse-grained (CG) force field models, challenging the conventional assumption that such approaches are limited to low-dimensional problems. Using the tree-structured Parzen estimator (TPE), we successfully optimize a 41-parameter CG model of Pebax-1657, a polyamide-polyether copolymer, simultaneously targeting structural and thermodynamic properties including density, radius of gyration, and glass transition temperature. Our approach not only converges faster than traditional search algorithms but also delivers consistent improvements over standard parametrization strategies, opening the door to scalable Bayesian optimization of complex molecular simulations.",
+  "links": [
+    {
+      "label": "DOI",
+      "url": "https://doi.org/10.1021/acs.jctc.5c01500"
+    }
+  ],
+  "thumbnail": "/Media/Papers_Thumbnails/BO_22_5.jpg"
+}

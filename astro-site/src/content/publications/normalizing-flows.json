@@ -1,0 +1,17 @@
+{
+  "title": "Normalizing flows and orbital-free DFT",
+  "authors": "A. de Camargo et al.",
+  "year": 2024,
+  "abstract": "Orbital-free density functional theory (OF-DFT) for real-space systems has historically depended on Lagrange optimization techniques, primarily due to the inability of previously proposed electron density ansatze to ensure the normalization constraint. This study illustrates how leveraging contemporary generative models, notably normalizing flows (NFs), can surmount this challenge. We pioneer a Lagrangian-free optimization framework by employing these machine learning models as ansatze for the electron density. This novel approach also integrates cutting-edge variational inference techniques and equivariant deep learning models, offering an innovative alternative to the OF-DFT problem.",
+  "links": [
+    {
+      "label": "arXiv",
+      "url": "https://arxiv.org/abs/2404.08764"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/RodrigoAVargasHdz/ofdft_normalizing-flows"
+    }
+  ],
+  "thumbnail": "/Media/Papers_Thumbnails/nflow_water.gif"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Ethan Elliot Rajkumar",
+  "role": "M.Sc. Student",
+  "email": "rajkume@mcmaster.ca",
+  "links": [
+    { "label": "Website", "url": "https://eraj.netlify.app/" },
+    { "label": "GitHub", "url": "https://github.com/ethraj2001" }
+  ],
+  "image": "/Media/team_fotos/Ethan_Elliot.png"
+}

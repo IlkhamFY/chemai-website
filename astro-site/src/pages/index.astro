@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home">
+  <section class="relative overflow-hidden bg-background">
+    <!-- Abstract background elements (substituting heavy p5.js with pure CSS shapes) -->
+    <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+      <div class="absolute -top-[20%] -right-[10%] w-[700px] h-[700px] rounded-full bg-gradient-to-br from-primary-light to-transparent blur-3xl opacity-30 mix-blend-multiply"></div>
+      <div class="absolute top-[40%] -left-[20%] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-accent to-transparent blur-3xl opacity-20 mix-blend-multiply"></div>
+    </div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10 flex flex-col md:flex-row items-center gap-12">
+      <div class="flex-1 space-y-8">
+        <h1 class="text-4xl md:text-5xl lg:text-[4.25rem] font-heading font-semibold text-foreground leading-[1.05] tracking-tight">
+          <span class="bg-gradient-to-br from-accent to-primary bg-clip-text text-transparent pr-[0.02em]">AI</span> for quantum chemistry, many-body physics, and materials discovery.
+        </h1>
+        
+        <p class="text-lg md:text-xl text-muted-foreground font-light max-w-2xl leading-relaxed">
+          The ChemAI Lab at McMaster University integrates state-of-the-art machine learning with quantum chemistry and materials science to push the boundaries of computational discovery.
+        </p>
+
+        <div class="flex flex-wrap gap-4 pt-4">
+          <a href="/publications" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-light transition-all hover-lift shadow-sm">
+            See our work
+          </a>
+          <a href="/people" class="inline-flex items-center justify-center px-6 py-3 border border-border text-sm font-medium rounded-md text-foreground bg-white hover:bg-muted transition-all hover-lift shadow-sm">
+            Meet the lab
+          </a>
+          <a href="/join" class="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-accent hover:text-primary transition-colors hover:underline underline-offset-4">
+            Join us &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="flex-1 w-full max-w-lg md:max-w-none relative aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden glass-panel flex items-center justify-center border border-border/60 shadow-xl group">
+         <!-- Simulated neural network/molecule graph using pure CSS for now, clean and fast -->
+         <div class="absolute inset-0 bg-[url('/Media/chemai_anim.gif')] bg-cover bg-center mix-blend-luminosity opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+         <div class="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-border/50">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <div class="glass-panel p-8 rounded-xl hover-lift text-center md:text-left">
+        <h3 class="font-heading text-xl font-semibold text-primary mb-3">Methods</h3>
+        <p class="text-muted-foreground font-light leading-relaxed text-sm">
+          Developing novel architectures, including equivariant neural networks and normalizing flows, customized for many-body physics.
+        </p>
+      </div>
+
+      <div class="glass-panel p-8 rounded-xl hover-lift text-center md:text-left">
+        <h3 class="font-heading text-xl font-semibold text-primary mb-3">Automatic Differentiation</h3>
+        <p class="text-muted-foreground font-light leading-relaxed text-sm">
+          Leveraging JAX and EnzymeAD to compute exact derivatives for deep generative models in physics.
+        </p>
+      </div>
+
+      <div class="glass-panel p-8 rounded-xl hover-lift text-center md:text-left">
+        <h3 class="font-heading text-xl font-semibold text-primary mb-3">Materials</h3>
+        <p class="text-muted-foreground font-light leading-relaxed text-sm">
+          Using Bayesian Optimization and AI-guided approaches to design and parameterize new materials efficiently.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</Layout>

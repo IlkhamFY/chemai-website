@@ -1,0 +1,20 @@
+{
+  "name": "Alexandre de Camargo",
+  "role": "Ph.D. Student",
+  "email": "decamara@mcmaster.ca",
+  "links": [
+    {
+      "label": "arXiv",
+      "url": "https://arxiv.org/search/physics?searchtype=author&query=de+Camargo,+A"
+    },
+    {
+      "label": "Twitter",
+      "url": "https://x.com/Alegendree"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/AlexandreDeCamargo"
+    }
+  ],
+  "image": "/Media/team_fotos/alexV2.jpg"
+}

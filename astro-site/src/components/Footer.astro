@@ -1,0 +1,63 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-primary text-gray-300 border-t border-primary-light/30 mt-auto">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 flex flex-col items-center">
+    
+    <div class="flex flex-col md:flex-row justify-between w-full max-w-5xl gap-10">
+      
+      <div class="flex-1">
+         <div class="inline-flex items-center mb-5 group">
+          <div class="flex flex-col justify-center leading-none mt-0.5 ml-1 transition-transform duration-300 group-hover:scale-[1.02] origin-left">
+            <span class="font-heading font-bold text-[1.1rem] md:text-[1.2rem] tracking-tighter text-white uppercase leading-none">
+              CHEM<span class="text-orange-400">.</span>AI
+            </span>
+            <div class="h-[2px] w-full bg-gradient-to-r from-orange-400/80 to-white/30 my-[3px] rounded-full"></div>
+            <div class="flex items-center justify-between w-full font-sans font-bold text-[0.45rem] md:text-[0.5rem] text-gray-400 uppercase leading-none pl-[1px]">
+              <span>L</span><span>A</span><span>B</span><span>O</span><span>R</span><span>A</span><span>T</span><span>O</span><span>R</span><span>Y</span>
+            </div>
+          </div>
+        </div>
+        
+        <p class="text-sm max-w-sm font-light leading-relaxed">
+          Integrating artificial intelligence, machine learning, and quantum chemistry and materials science.
+        </p>
+      </div>
+
+      <div class="flex-1 flex flex-col space-y-3 shrink-0">
+        <h3 class="font-heading font-semibold text-lg text-white mb-2">Location</h3>
+        <div class="text-sm leading-relaxed font-light">
+          <p>Department of Chemistry & Chemical Biology</p>
+          <p>McMaster University</p>
+          <p>1280 Main St W</p>
+          <p>Hamilton, ON L8S 4L8</p>
+          <p>Canada</p>
+        </div>
+      </div>
+
+      <div class="flex-1 flex flex-col space-y-3">
+         <h3 class="font-heading font-semibold text-lg text-white mb-2">Connect</h3>
+        <a href="mailto:vargashr@mcmaster.ca" class="text-sm text-accent hover:text-white transition-colors duration-200">
+          vargashr@mcmaster.ca
+        </a>
+        <div class="flex flex-wrap gap-x-4 gap-y-2 mt-4 text-sm font-medium">
+          <a href="https://scholar.google.com/citations?user=RodrigoAVargas" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">Scholar</a>
+          <a href="https://github.com/RodrigoAVargasHdz" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">GitHub</a>
+          <a href="https://twitter.com/RoVargasHdz" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">Twitter (X)</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="w-full max-w-5xl border-t border-primary-light/50 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 font-light">
+      <p>&copy; {currentYear} ChemAI Lab. All rights reserved.</p>
+      <div class="flex items-center mt-4 md:mt-0">
+        <a href="https://www.mcmaster.ca/" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/en/5/53/McMaster_University_logo.svg" alt="McMaster University" class="h-8 opacity-70 hover:opacity-100 transition-opacity grayscale brightness-200 contrast-200" style="filter: brightness(0) invert(1);" />
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>

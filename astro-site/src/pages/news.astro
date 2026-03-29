@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allNews = await getCollection('news');
+const sortedNews = allNews.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title="News" description="Latest updates, papers, and announcements from the ChemAI Lab.">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 max-w-4xl">
+    
+    <div class="mb-16">
+      <h1 class="text-4xl md:text-5xl font-heading font-semibold text-primary mb-4 tracking-tight">Latest News</h1>
+      <p class="text-lg text-muted-foreground font-light">
+        Announcements, new publications, talks, and awards.
+      </p>
+    </div>
+
+    {sortedNews.length === 0 ? (
+      <div class="glass-panel p-12 text-center rounded-2xl border border-border/60">
+        <p class="text-muted-foreground font-light">Stay tuned for upcoming news and updates from the ChemAI Lab.</p>
+      </div>
+    ) : (
+      <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
+        {sortedNews.map((item, index) => (
+           <div class={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active`}>
+              {/* Timeline dot */}
+              <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-accent/10 text-accent left-0 md:left-1/2 -translate-x-1/2 absolute top-1/2 -translate-y-1/2 z-10 shadow-sm shadow-accent/20 group-hover:scale-110 transition-transform">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+
+              {/* Card */}
+              <div class={`w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel p-6 rounded-2xl border border-border/60 hover-lift ${index % 2 === 0 ? 'md:mr-auto md:text-right' : 'md:ml-auto md:text-left'}`}>
+                <time class="text-xs font-semibold uppercase tracking-wider text-accent mb-2 block">
+                  {item.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+                <h3 class="text-xl font-heading font-semibold text-foreground mb-2">
+                  {item.data.title}
+                </h3>
+                <p class="text-muted-foreground font-light text-sm mb-4 leading-relaxed line-clamp-3">
+                  {item.data.blurb}
+                </p>
+                {item.data.link && (
+                  <a href={item.data.link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-medium text-primary hover:text-accent transition-colors underline hover:no-underline">
+                    Read more &rarr;
+                  </a>
+                )}
+              </div>
+           </div>
+        ))}
+      </div>
+    )}
+
+  </div>
+</Layout>

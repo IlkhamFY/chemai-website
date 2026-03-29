@@ -1,0 +1,148 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class={`world-map-wrapper relative bg-[#0f172a]/50 rounded-2xl border border-border/60 overflow-hidden shadow-sm flex items-center justify-center ${className || ''}`} id="world-map-container">
+  <div id="mapPosition" class="w-full h-full cursor-grab active:cursor-grabbing"></div>
+  
+  <!-- Loading state -->
+  <div id="map-loading" class="absolute inset-0 flex items-center justify-center bg-[#0f172a]/80 backdrop-blur-sm transition-opacity duration-300 pointer-events-none z-10">
+    <div class="flex flex-col items-center gap-3">
+      <svg class="animate-spin h-6 w-6 text-accent" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+      <span class="text-sm text-gray-400 font-light">Loading global footprint...</span>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+  .country {
+    fill: #1e293b; /* slate-800 */
+    stroke: #334155; /* slate-700 */
+    stroke-width: 0.5px;
+    transition: fill 0.3s ease;
+  }
+  
+  .country-highlight {
+    fill: #22d3ee; /* cyan-400 / Accent matching */
+    stroke: #0891b2; /* cyan-600 */
+    stroke-width: 1px;
+    transition: fill 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0px 0px 4px rgba(34, 211, 238, 0.4));
+  }
+  
+  .country-highlight:hover {
+    fill: #0ea5e9; /* sky-500 */
+    filter: drop-shadow(0px 0px 8px rgba(14, 165, 233, 0.6));
+    cursor: pointer;
+  }
+  
+  /* Outline for globe (optional visual boundary) */
+  .sphere {
+    fill: transparent;
+    stroke: rgba(255, 255, 255, 0.05);
+    stroke-width: 1px;
+  }
+</style>
+
+<script>
+  import * as d3 from 'https://esm.sh/d3@7';
+  import * as topojson from 'https://esm.sh/topojson-client@3';
+
+  // Initialize once the map container exists
+  if (document.getElementById('mapPosition')) {
+    initMap();
+  }
+
+  async function initMap() {
+    const container = document.getElementById('mapPosition');
+    if (!container) return;
+
+    // Wait slightly to ensure layout has calculated width/height in Astro
+    await new Promise(r => setTimeout(r, 100));
+
+    const width = container.clientWidth;
+    const height = container.clientHeight || 350;
+
+    const svg = d3.select('#mapPosition')
+      .append('svg')
+      .attr('width', '100%')
+      .attr('height', '100%')
+      .attr('viewBox', `0 0 ${width} ${height}`)
+      .attr('preserveAspectRatio', 'xMidYMid meet');
+        
+    // Standard map projection tailored to cleanly fit global view
+    const projection = d3.geoMercator()
+      .scale(width / 6.2) // Proportional to container width
+      .translate([width / 2, height / 1.4]);
+        
+    const path = d3.geoPath().projection(projection);
+    const g = svg.append("g");
+    
+    // Optional: Draw a subtle sphere background boundary
+    // g.append("path")
+    //   .datum({type: "Sphere"})
+    //   .attr("class", "sphere")
+    //   .attr("d", path);
+
+    // Zooming functionality
+    const zoom = d3.zoom()
+      .scaleExtent([1, 8])
+      .on('zoom', (event) => {
+        g.attr('transform', event.transform);
+      });
+        
+    svg.call(zoom);
+
+    try {
+      // Fetch user metadata config and actual topology
+      const [metaRes, mapDataRes] = await Promise.all([
+        fetch("https://raw.githubusercontent.com/ChemAI-Lab/website/refs/heads/main/metadataMap.txt").catch(() => null),
+        fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json")
+      ]);
+      
+      let countriesList = [];
+      if (metaRes && metaRes.ok) {
+        const metaText = await metaRes.text();
+        countriesList = metaText.split('\n').map(c => c.trim()).filter(Boolean);
+      } else {
+        // Fallback or handle error gracefully
+        console.warn("Could not fetch ChemAI Lab metadataMap.txt - reverting to base map array.");
+        countriesList = ["Mexico", "Brazil", "Australia", "Canada", "Germany", "United States"]; // fallback defaults based on old comments
+      }
+      
+      const mapData = await mapDataRes.json();
+      
+      // TopoJSON feature extraction (bypassing strict typing for simplicity)
+      const features = topojson.feature(mapData, mapData.objects.countries).features;
+      
+      g.selectAll('path.country')
+        .data(features)
+        .enter()
+        .append('path')
+        .attr('class', (d) => {
+          const name = d.properties.name;
+          return countriesList.includes(name) ? 'country-highlight' : 'country';
+        })
+        .attr('d', path)
+        .append('title')
+        .text((d) => d.properties.name);
+        
+      // Hide loader once rendered
+      const loader = document.getElementById('map-loading');
+      if (loader) loader.style.opacity = '0';
+      setTimeout(() => loader?.remove(), 300);
+            
+    } catch (error) {
+      console.error('Error loading D3 map data:', error);
+      const loader = document.getElementById('map-loading');
+      if (loader) loader.innerHTML = `<span class="text-red-400 text-sm">Failed to load map data.</span>`;
+    }
+  }
+</script>

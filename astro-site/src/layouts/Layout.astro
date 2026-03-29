@@ -1,0 +1,42 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "ChemAI Lab at McMaster University. AI for quantum chemistry, many-body physics, and materials discovery." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/Media/header_logo.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | ChemAI Lab</title>
+    <meta name="description" content={description} />
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content={`${title} | ChemAI Lab`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.site} />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="flex flex-col min-h-screen bg-transparent antialiased selection:bg-accent/20">
+    <Navbar />
+    <main class="flex-grow flex flex-col pt-20">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

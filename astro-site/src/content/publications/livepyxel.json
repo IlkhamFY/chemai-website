@@ -1,0 +1,17 @@
+{
+  "title": "LivePyxel: accelerating image annotations with a Python-integrated webcam live streaming",
+  "authors": "Uriel Garcilazo-Cruz, Joseph O. Okeme, Rodrigo A. Vargas-Hernández",
+  "year": 2026,
+  "abstract": "In this work, we introduce LivePixel, a Python-based graphical user interface that integrates with imaging systems—such as webcams and microscopes—to enable on-site image annotation in laboratory environments. LivePyxel addresses the limitations of existing annotation tools by supporting on-demand pipelines without requiring pre-collected datasets. The software features an intuitive interface with precision annotation tools, including Bézier splines and binary masks, alongside non-destructive layer editing for high-performance workflows. Built on OpenCV and NumPy, LivePyxel offers broad video device compatibility and is optimized for object detection tasks, accelerating the development of AI models in experimental settings.",
+  "links": [
+    {
+      "label": "DOI",
+      "url": "https://doi.org/10.1039/d5dd00421g"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/UGarCil/LivePyxel"
+    }
+  ],
+  "thumbnail": "/Media/Papers_Thumbnails/livepyxel.gif"
+}

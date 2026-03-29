@@ -1,0 +1,13 @@
+{
+  "title": "Softmax parameterization of the occupation numbers for natural orbital functionals",
+  "authors": "L. Franco et al.",
+  "year": 2024,
+  "abstract": "Within the framework of natural orbital functional theory, having a convenient representation of the optimization function becomes critical for the computational performance of the calculation. Recognizing this, we propose an innovative parametrization of the occupation numbers that takes advantage of the electron-pairing approach used in Piris natural orbital functionals, through the adoption of the softmax function, a pivotal component in modern deep-learning models. Our approach not only ensures adherence to the N-representability of the first-order reduced density matrix (1RDM) but also significantly enhances the computational efficiency of 1RDM functional theory calculations. The effectiveness of this alternative parameterization approach was assessed using the W4-17-MR molecular set, which demonstrated faster and robust convergence compared to previous implementations.",
+  "links": [
+    {
+      "label": "arXiv",
+      "url": "https://arxiv.org/abs/2403.09463"
+    }
+  ],
+  "thumbnail": "/Media/Papers_Thumbnails/softmax_RDM.png"
+}

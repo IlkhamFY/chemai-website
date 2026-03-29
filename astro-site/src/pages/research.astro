@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const researchAreas = [
+  {
+    title: "Machine Learning for Many-Body Physics",
+    description: "Developing expressive, equivariant neural network architectures and generative models (like Normalizing Flows) to solve the many-electron Schrödinger equation and parameterize accurate orbital-free density functionals.",
+    keywords: ["Equivariant Neural Networks", "Normalizing Flows", "Orbital-Free DFT", "WF Ansätze"],
+    links: [
+      { label: "Normalizing Flows and OF-DFT (2024)", url: "https://arxiv.org/abs/2404.08764" }
+    ]
+  },
+  {
+    title: "Automatic Differentiation in Quantum Chemistry",
+    description: "Leveraging modern AD frameworks (JAX, EnzymeAD-Rust) to compute exact derivatives of complex quantum chemical observables and energy landscapes. This enables highly efficient force field development and dynamic simulations without finite-difference errors.",
+    keywords: ["JAX", "EnzymeAD", "Differentiable Programming", "Energy Gradients"],
+    links: [
+      { label: "MOLPIPx Package", url: "https://github.com/ChemAI-Lab/molpipx" },
+      { label: "PennyLane (2022)", url: "https://arxiv.org/pdf/1811.04968" }
+    ]
+  },
+  {
+    title: "Generative Potential Energy Surfaces",
+    description: "Creating highly accurate, surrogate models for Potential Energy Surfaces (PES) combining Gaussian processes and permutationally invariant polynomials. We aim to bridge the gap between expensive ab-initio calculations and fast molecular dynamics.",
+    keywords: ["Gaussian Processes", "PES", "Permutationally Invariant Polynomials"],
+    links: [
+      { label: "MOLPIPx Paper (2025)", url: "https://doi.org/10.1063/5.0250837" }
+    ]
+  },
+  {
+    title: "AI-Guided Materials Discovery",
+    description: "Utilizing Bayesian Optimization and active learning loops to efficiently explore the chemical space of complex polymers and coarse-grained systems, accelerating the discovery of novel materials with targeted thermodynamic properties.",
+    keywords: ["Bayesian Optimization", "Active Learning", "Coarse-Grained Models", "Polymers"],
+    links: [
+      { label: "BO for Coarse-Grained Models (2026)", url: "https://doi.org/10.1021/acs.jctc.5c01500" }
+    ]
+  }
+];
+---
+
+<Layout title="Research" description="Our core research areas combining AI with quantum chemistry and materials science.">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex max-w-7xl flex-col">
+    
+    <div class="mb-16">
+      <h1 class="text-4xl md:text-5xl font-heading font-semibold text-primary mb-4 tracking-tight">Research Focus</h1>
+      <p class="text-lg text-muted-foreground font-light max-w-2xl">
+        We sit at the intersection of theoretical chemistry and computer science, developing next-generation AI methods to solve hard physical problems.
+      </p>
+    </div>
+
+    <div class="space-y-16">
+      {researchAreas.map(area => (
+        <section class="glass-panel p-8 md:p-12 rounded-2xl border border-border/60 hover-lift relative overflow-hidden group">
+          
+          <div class="absolute -right-10 -top-10 w-48 h-48 bg-accent/5 rounded-full blur-3xl group-hover:bg-accent/10 transition-colors duration-500 pointer-events-none"></div>
+
+          <h2 class="text-3xl font-heading font-semibold text-foreground mb-4 relative z-10">{area.title}</h2>
+          <p class="text-muted-foreground font-light leading-relaxed max-w-4xl text-base md:text-lg mb-8 relative z-10">
+            {area.description}
+          </p>
+
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10 pt-6 border-t border-border/40">
+            <div class="flex flex-wrap gap-2">
+               {area.keywords.map(kw => (
+                 <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-muted text-muted-foreground">
+                   {kw}
+                 </span>
+               ))}
+            </div>
+            
+            <div class="flex flex-wrap gap-3">
+              {area.links.map(link => (
+                <a href={link.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-medium text-accent hover:text-primary transition-colors hover:underline underline-offset-4">
+                  {link.label} &rarr;
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      ))}
+    </div>
+
+  </div>
+</Layout>

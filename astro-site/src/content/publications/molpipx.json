@@ -1,0 +1,17 @@
+{
+  "title": "MOLPIPx: An end-to-end differentiable package for permutationally invariant polynomials in Python and Rust",
+  "authors": "Manuel S. Drehwald, Asma Jamali, Rodrigo A. Vargas-Hernández",
+  "year": 2025,
+  "abstract": "In this work, we present MOLPIPx, a versatile library designed to seamlessly integrate permutationally invariant polynomials with modern machine learning frameworks, enabling the efficient development of linear models, neural networks, and Gaussian process models. These methodologies are widely employed for parameterizing potential energy surfaces across diverse molecular systems. MOLPIPx leverages two powerful automatic differentiation engines—JAX and EnzymeAD-Rust—to facilitate the efficient computation of energy gradients and higher-order derivatives, which are essential for tasks such as force field development and dynamic simulations.",
+  "links": [
+    {
+      "label": "DOI",
+      "url": "https://doi.org/10.1063/5.0250837"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/ChemAI-Lab/molpipx"
+    }
+  ],
+  "thumbnail": "/Media/Papers_Thumbnails/Asma_2025.png"
+}

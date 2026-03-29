@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Join the Lab" description="Opportunities for students and postdocs at the ChemAI Lab.">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 max-w-4xl">
+    
+    <div class="mb-16">
+      <h1 class="text-4xl md:text-5xl font-heading font-semibold text-primary mb-4 tracking-tight">Join Us</h1>
+      <p class="text-lg text-muted-foreground font-light">
+        We are always looking for passionate individuals to join our interdisciplinary team.
+      </p>
+    </div>
+
+    <div class="space-y-12">
+      <section class="glass-panel p-8 md:p-10 rounded-2xl border border-border/60">
+        <h2 class="text-2xl font-heading font-semibold text-foreground mb-6">Open Positions</h2>
+        
+        <div class="space-y-8">
+          <div>
+            <h3 class="font-heading text-lg font-semibold text-primary mb-2">Graduate Students (MSc & PhD)</h3>
+            <p class="text-muted-foreground font-light leading-relaxed mb-4 text-sm md:text-base">
+              We welcome applications from students with backgrounds in Chemistry, Physics, Computer Science, or Materials Science. 
+              Strong programming skills (Python, PyTorch/JAX) and an interest in quantum mechanics and machine learning are highly desired.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="font-heading text-lg font-semibold text-primary mb-2">Undergraduate Researchers</h3>
+            <p class="text-muted-foreground font-light leading-relaxed mb-4 text-sm md:text-base">
+              If you are a McMaster undergraduate student interested in computational chemistry or AI, please reach out. We typically take on thesis students and summer researchers (NSERC USRA).
+            </p>
+          </div>
+
+          <div>
+             <h3 class="font-heading text-lg font-semibold text-primary mb-2">Postdoctoral Fellows</h3>
+            <p class="text-muted-foreground font-light leading-relaxed mb-4 text-sm md:text-base">
+               Currently, there are no fully funded postdoc positions open, but we are extremely supportive of co-writing fellowships (e.g., Banting, NSERC, or Acceleration Consortium fellowships) for strong candidates.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="glass-panel p-8 md:p-10 rounded-2xl border border-accent/20 bg-accent/5">
+        <h2 class="text-2xl font-heading font-semibold text-foreground mb-6">How to Apply</h2>
+        
+        <p class="text-muted-foreground font-light leading-relaxed mb-6 text-sm md:text-base">
+          To maximize the chances of a response, please follow these instructions when contacting the lab via email (<a href="mailto:ChemAI-lab@mcmaster.ca" class="text-accent underline underline-offset-4 hover:text-primary transition-colors">ChemAI-lab@mcmaster.ca</a>):
+        </p>
+
+        <ul class="space-y-4 list-disc list-outside ml-5 text-sm md:text-base font-light text-muted-foreground marker:text-primary">
+          <li><strong>Subject Line:</strong> Use the format <code class="bg-white/50 px-2 py-0.5 rounded text-accent tracking-tight font-mono">[Prospective Student] Last Name - Degree Interest</code></li>
+          <li><strong>CV:</strong> Attach a recent CV (PDF format).</li>
+          <li><strong>Transcripts:</strong> Include unofficial transcripts.</li>
+          <li><strong>Brief Statement:</strong> In 1-2 paragraphs, explain <em>why</em> you want to join the ChemAI Lab specifically, referencing a recent paper or project from the lab that interests you.</li>
+        </ul>
+      </section>
+    </div>
+
+  </div>
+</Layout>

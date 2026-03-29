@@ -1,6 +1,0 @@
-Para colorear un nuevo pais,
-agragar el nombre del pais en metadataMap.txt
-class="customh1" cambia el color
-
-# para activar locar server y ver cambios loacles
-nodemon server 

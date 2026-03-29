@@ -1,0 +1,11 @@
+{
+  "name": "Ilkham Yabbarov",
+  "role": "Student",
+  "email": "yabbaroi@mcmaster.ca",
+  "links": [
+    { "label": "Website", "url": "https://www.ilkham.com/" },
+    { "label": "Twitter", "url": "https://x.com/ilkhamOA" },
+    { "label": "GitHub", "url": "https://github.com/IlkhamFY" }
+  ],
+  "image": "/Media/team_fotos/Ilkham.png"
+}

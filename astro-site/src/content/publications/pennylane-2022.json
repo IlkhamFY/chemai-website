@@ -1,0 +1,13 @@
+{
+  "title": "PennyLane: Automatic differentiation of hybrid quantumclassical computations",
+  "authors": "V. Bergholm et al.",
+  "year": 2022,
+  "abstract": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error culpa modi hic nihil accusamus? Accusantium dolore dignissimos dolorum ratione nihil deserunt unde maxime nisi eos, veniam vel, molestiae cum accusamus? Ducimus quibusdam repellendus ea reiciendis assumenda pariatur dolores sit voluptatum quasi. Unde facilis excepturi, voluptatem hic iste optio eius est fugit accusamus ratione nihil fugiat, tempora architecto, soluta magnam laborum.",
+  "links": [
+    {
+      "label": "Ref1",
+      "url": "https://arxiv.org/pdf/1811.04968"
+    }
+  ],
+  "thumbnail": "/Media/Papers_Thumbnails/AutDiffQua.png"
+}

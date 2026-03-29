@@ -1,0 +1,68 @@
+---
+const navLinks = [
+  { href: "/research", label: "Research" },
+  { href: "/publications", label: "Publications" },
+  { href: "/people", label: "People" },
+  { href: "/join", label: "Join" },
+  { href: "/teaching", label: "Teaching" },
+];
+---
+
+<header class="fixed top-0 w-full z-50 glass-panel border-b border-border/40">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <a href="/" class="flex items-center group">
+      <div class="flex flex-col justify-center leading-none mt-0.5 ml-1 transition-transform duration-300 group-hover:scale-[1.02] origin-left">
+        <span class="font-heading font-bold text-[1.1rem] md:text-[1.2rem] tracking-tighter text-primary uppercase leading-none">
+          CHEM<span class="text-accent">.</span>AI
+        </span>
+        <div class="h-[2px] w-full bg-gradient-to-r from-accent/80 to-primary/40 my-[3px] rounded-full"></div>
+        <div class="flex items-center justify-between w-full font-sans font-bold text-[0.45rem] md:text-[0.5rem] text-muted-foreground uppercase leading-none pl-[1px]">
+          <span>L</span><span>A</span><span>B</span><span>O</span><span>R</span><span>A</span><span>T</span><span>O</span><span>R</span><span>Y</span>
+        </div>
+      </div>
+    </a>
+    <nav class="hidden md:flex gap-8">
+      {navLinks.map((link) => (
+        <a 
+          href={link.href}
+          class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors tracking-wide"
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+    <!-- Mobile Nav Toggle -->
+    <button id="mobile-menu-btn" class="md:hidden p-2 text-primary" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Mobile Menu Panel -->
+  <div id="mobile-menu" class="hidden md:hidden bg-background/95 backdrop-blur-lg border-b border-border/40 overflow-hidden transition-all duration-300 transform origin-top w-full">
+    <nav class="flex flex-col px-4 py-4 gap-2 shadow-inner">
+      {navLinks.map((link) => (
+        <a 
+          href={link.href}
+          class="text-base font-medium text-muted-foreground hover:text-primary transition-colors py-3 border-b border-border/20 last:border-0"
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isExpanded));
+      menu.classList.toggle('hidden');
+    });
+  }
+</script>

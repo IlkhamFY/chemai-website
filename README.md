@@ -1,8 +1,11 @@
 <div align="center">
-  <img src="astro-site/public/Media/header_logo.png" alt="ChemAI Lab Logo" width="120" />
-  <h1>ChemAI Laboratory</h1>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="astro-site/public/Media/github_logo_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="astro-site/public/Media/github_logo_light.svg">
+    <img src="astro-site/public/Media/github_logo_light.svg" alt="ChemAI Laboratory Logo" width="300" />
+  </picture>
+  <br/>
   <p><strong>McMaster University</strong></p>
-  <p><em>Integrating artificial intelligence, machine learning, and quantum chemistry and materials science.</em></p>
 </div>
 
 ---
@@ -10,7 +13,7 @@
 ### Overview
 This repository contains the source code for the public-facing website of the **ChemAI Lab**, led by Dr. Rodrigo A. Vargas-Hernández at the Department of Chemistry & Chemical Biology, McMaster University. 
 
-The website is engineered with a modern, zero-JS **Astro** and **Tailwind CSS** stack. It leverages statically generated islands to prioritize elite geographic performance, strict architectural typography, and a premium "research boutique" aesthetic.
+The website is engineered with a modern, zero-JS **Astro** and **Tailwind CSS** stack. It leverages statically generated islands to prioritize elite geographic performance and strict architectural typography.
 
 ### Development Workflow
 
@@ -23,7 +26,7 @@ cd astro-site
 # Install dependencies (Node 18+ required)
 npm install
 
-# Start the local development server at http://localhost:4321
+# Start the local development server
 npm run dev
 
 # Build statically for production

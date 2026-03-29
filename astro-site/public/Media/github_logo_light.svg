@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" width="320" height="120">
+  <defs>
+    <linearGradient id="lineLight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.4" />
+    </linearGradient>
+    <style>
+      .chem { font-family: system-ui, -apple-system, sans-serif; font-weight: 900; font-size: 64px; fill: #0f172a; letter-spacing: -3.5px; }
+      .dot { fill: #06b6d4; }
+      .lab { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 19px; fill: #64748b; letter-spacing: 12px; }
+    </style>
+  </defs>
+  <text x="10" y="65" class="chem">CHEM<tspan class="dot">.</tspan>AI</text>
+  <rect x="14" y="80" width="242" height="5" rx="2.5" fill="url(#lineLight)" />
+  <text x="17" y="112" class="lab">LABORATORY</text>
+</svg>

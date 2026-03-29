@@ -5,13 +5,12 @@
       <stop offset="100%" stop-color="#0f172a" stop-opacity="0.4" />
     </linearGradient>
     <style>
-      .chem { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", if-else; font-weight: 900; font-size: 64px; fill: #0f172a; }
+      .chem { font-family: system-ui, -apple-system, sans-serif; font-weight: 900; font-size: 64px; fill: #0f172a; letter-spacing: -3.5px; }
       .dot { fill: #06b6d4; }
-      .lab { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", if-else; font-weight: 700; font-size: 19px; fill: #64748b; letter-spacing: 12px; }
+      .lab { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 19px; fill: #64748b; letter-spacing: 12px; }
     </style>
   </defs>
-  <!-- textLength forces the text to a specific width regardless of the device font -->
-  <text x="10" y="65" class="chem" textLength="245" lengthAdjust="spacingAndGlyphs">CHEM<tspan class="dot">.</tspan>AI</text>
+  <text x="10" y="65" class="chem">CHEM<tspan class="dot">.</tspan>AI</text>
   <rect x="14" y="80" width="242" height="5" rx="2.5" fill="url(#lineLight)" />
-  <text x="17" y="112" class="lab" textLength="236" lengthAdjust="spacingAndGlyphs">LABORATORY</text>
+  <text x="17" y="112" class="lab">LABORATORY</text>
 </svg>

@@ -1,21 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" width="320" height="120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 277 120" width="277" height="120">
   <defs>
     <linearGradient id="lineLight" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.8" />
       <stop offset="100%" stop-color="#0f172a" stop-opacity="0.4" />
     </linearGradient>
     <style>
-      .chem { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 900; font-size: 64px; fill: #0f172a; }
+      .chem { font-family: system-ui, -apple-system, sans-serif; font-weight: 900; font-size: 64px; fill: #0f172a; letter-spacing: -3.5px; }
       .dot { fill: #06b6d4; }
-      .lab { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 19px; fill: #64748b; }
+      .lab { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 19px; fill: #64748b; letter-spacing: 0; }
     </style>
   </defs>
-  <!-- CHEM.AI - Locked to 250px width -->
-  <text x="10" y="65" class="chem" textLength="250" lengthAdjust="spacing">CHEM<tspan class="dot">.</tspan>AI</text>
-  
-  <!-- Divider - Exactly 250px wide, starting at same X -->
-  <rect x="10" y="80" width="250" height="4" rx="2" fill="url(#lineLight)" />
-  
-  <!-- LABORATORY - Justified to exactly 250px width using character spacing -->
-  <text x="10" y="108" class="lab" textLength="250" lengthAdjust="spacing">LABORATORY</text>
+  <text x="10" y="65" class="chem">CHEM<tspan class="dot">.</tspan>AI</text>
+  <rect x="10" y="80" width="254.5" height="5" rx="2.5" fill="url(#lineLight)" />
+  <text x="10" y="112" class="lab" textLength="254.5" lengthAdjust="spacing">LABORATORY</text>
 </svg>

@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import WorldMap from '../components/WorldMap.astro';
 import { getCollection } from 'astro:content';
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase.slice(0, -1) : rawBase;
 
 const allPeople = await getCollection('people');
 
@@ -53,7 +55,7 @@ const alumni = allPeople.filter(person => person.data.role.includes("Alumni"));
             <div class="glass-panel p-6 rounded-2xl border border-border/60 hover-lift h-full flex flex-col items-center justify-center">
               <div class="aspect-square w-36 h-36 rounded-full overflow-hidden mx-auto mb-6 bg-muted shadow-inner relative">
                 {person.data.image ? (
-                  <img src={person.data.image} alt={person.data.name} class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+                  <img src={`${base}${person.data.image}`} alt={person.data.name} class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
                 ) : (
                   <div class="w-full h-full flex items-center justify-center text-muted-foreground bg-muted/30">
                     <svg class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path></svg>

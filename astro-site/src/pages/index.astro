@@ -37,7 +37,7 @@ const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
 
       <div class="flex-1 w-full max-w-lg md:max-w-none relative aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden glass-panel flex items-center justify-center border border-border/60 shadow-xl group">
          <!-- Simulated neural network/molecule graph using pure CSS for now, clean and fast -->
-         <div class="absolute inset-0 bg-[url('/Media/chemai_anim.gif')] bg-cover bg-center mix-blend-luminosity opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+         <div class="absolute inset-0 bg-cover bg-center mix-blend-luminosity opacity-80 group-hover:opacity-100 transition-opacity duration-500" style={`background-image: url('${base}Media/chemai_anim.gif')`}></div>
          <div class="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
       </div>
     </div>

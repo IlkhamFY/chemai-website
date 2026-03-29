@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Home">
@@ -21,13 +22,13 @@ import Layout from '../layouts/Layout.astro';
         </p>
 
         <div class="flex flex-wrap gap-4 pt-4">
-          <a href="/publications" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-light transition-all hover-lift shadow-sm">
+          <a href={`${base}publications`} class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-light transition-all hover-lift shadow-sm">
             See our work
           </a>
-          <a href="/people" class="inline-flex items-center justify-center px-6 py-3 border border-border text-sm font-medium rounded-md text-foreground bg-white hover:bg-muted transition-all hover-lift shadow-sm">
+          <a href={`${base}people`} class="inline-flex items-center justify-center px-6 py-3 border border-border text-sm font-medium rounded-md text-foreground bg-white hover:bg-muted transition-all hover-lift shadow-sm">
             Meet the lab
           </a>
-          <a href="/join" class="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-accent hover:text-primary transition-colors hover:underline underline-offset-4">
+          <a href={`${base}join`} class="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-accent hover:text-primary transition-colors hover:underline underline-offset-4">
             Join us &rarr;
           </a>
         </div>

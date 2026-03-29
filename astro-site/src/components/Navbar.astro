@@ -1,16 +1,17 @@
 ---
+const base = import.meta.env.BASE_URL;
 const navLinks = [
-  { href: "/research", label: "Research" },
-  { href: "/publications", label: "Publications" },
-  { href: "/people", label: "People" },
-  { href: "/join", label: "Join" },
-  { href: "/teaching", label: "Teaching" },
+  { href: `${base}research`, label: "Research" },
+  { href: `${base}publications`, label: "Publications" },
+  { href: `${base}people`, label: "People" },
+  { href: `${base}join`, label: "Join" },
+  { href: `${base}teaching`, label: "Teaching" },
 ];
 ---
 
 <header class="fixed top-0 w-full z-50 glass-panel border-b border-border/40">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-    <a href="/" class="flex items-center group">
+    <a href={base} class="flex items-center group">
       <div class="flex flex-col justify-center leading-none mt-0.5 ml-1 transition-transform duration-300 group-hover:scale-[1.02] origin-left">
         <span class="font-heading font-bold text-[1.1rem] md:text-[1.2rem] tracking-tighter text-primary uppercase leading-none">
           CHEM<span class="text-accent">.</span>AI

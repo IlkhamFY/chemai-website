@@ -5,12 +5,12 @@
       <stop offset="100%" stop-color="#f8fafc" stop-opacity="0.3" />
     </linearGradient>
     <style>
-      .chem { font-family: system-ui, -apple-system, sans-serif; font-weight: 900; font-size: 64px; fill: #f8fafc; letter-spacing: -3.5px; }
+      .chem { font-family: system-ui, -apple-system, sans-serif; font-weight: 900; font-size: 64px; fill: #f8fafc; letter-spacing: 0; }
       .dot { fill: #fb923c; }
       .lab { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 19px; fill: #94a3b8; letter-spacing: 0; }
     </style>
   </defs>
-  <text x="10" y="65" class="chem">CHEM<tspan class="dot">.</tspan>AI</text>
+  <text x="10" y="65" class="chem" textLength="254.5" lengthAdjust="spacing">CHEM<tspan class="dot">.</tspan>AI</text>
   <rect x="10" y="80" width="254.5" height="5" rx="2.5" fill="url(#lineDark)" />
   <text x="10" y="112" class="lab" textLength="254.5" lengthAdjust="spacing">LABORATORY</text>
 </svg>

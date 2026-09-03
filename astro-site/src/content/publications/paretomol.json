@@ -1,0 +1,21 @@
+{
+  "title": "ParetoMol: a free web application for multi-objective Pareto analysis of molecular properties",
+  "authors": "Ilkham Yabbarov, Rodrigo A. Vargas-Hernández",
+  "year": 2026,
+  "abstract": "ParetoMol is an open-source web application designed for the multi-objective Pareto analysis of molecular properties, specifically focusing on safety and pharmacokinetics. The tool helps researchers navigate the trade-offs involved in molecular optimization—such as balancing potency, selectivity, pharmacokinetics, and safety. ParetoMol accepts molecules via SMILES strings, CSV/SDF file uploads, ChEMBL target identifiers, or PubChem name resolution. It provides synchronized visualization tabs, including configurable Pareto scatter plots, BOILED-Egg partitioning, scaffold analysis, and chemical space projections.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://pubs.rsc.org/dd/article/doi/10.1039/d6dd00366d/1296779/ParetoMol-a-free-web-application-for-multi"
+    },
+    {
+      "label": "Website",
+      "url": "https://paretomol.com"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/IlkhamFY/paretomol"
+    }
+  ],
+  "thumbnail": "/Media/Papers_Thumbnails/paretomol.png"
+}

@@ -20,21 +20,18 @@ const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
       <div class="flex-1 space-y-8">
         <h1 class="text-4xl md:text-5xl lg:text-[4.25rem] font-heading font-semibold text-foreground leading-[1.08] tracking-tight">
           <span class="block text-base md:text-lg font-medium text-muted-foreground tracking-normal mb-3 md:mb-4">
-            ChemAI Laboratory · McMaster University
+            Department of Chemistry & Chemical Biology
           </span>
-          <span class="bg-gradient-to-br from-accent to-primary bg-clip-text text-transparent pr-[0.02em]">AI</span> for quantum chemistry, many-body physics, and materials discovery.
+          <span class="bg-gradient-to-br from-accent to-primary bg-clip-text text-transparent pr-[0.02em]">AI</span> for quantum chemistry and materials discovery.
         </h1>
 
         <p class="text-lg md:text-xl text-muted-foreground font-light max-w-2xl leading-relaxed">
-          Led by <strong class="font-medium text-foreground">Dr. Rodrigo A. Vargas-Hernández</strong>, the ChemAI group combines modern machine learning with quantum chemistry and materials science—part of McMaster’s AI and computational chemistry community in Hamilton, Ontario.
+          Dr. Rodrigo A. Vargas-Hernández leads the ChemAI group at McMaster University in Hamilton, Ontario. The group builds machine learning methods for quantum simulation and materials design.
         </p>
 
         <div class="flex flex-wrap gap-4 pt-4">
           <a href={`${base}publications`} class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-light transition-all hover-lift shadow-sm">
             See our work
-          </a>
-          <a href={`${base}people`} class="inline-flex items-center justify-center px-6 py-3 border border-border text-sm font-medium rounded-md text-foreground bg-white hover:bg-muted transition-all hover-lift shadow-sm">
-            Meet the lab
           </a>
           <a href={`${base}join`} class="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-accent hover:text-primary transition-colors hover:underline underline-offset-4">
             Join us &rarr;
@@ -42,9 +39,9 @@ const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
         </div>
       </div>
 
-      <div class="flex-1 w-full max-w-lg md:max-w-none relative aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden glass-panel flex items-center justify-center border border-border/60 shadow-xl group">
+      <div class="flex-1 w-full max-w-lg md:max-w-none relative aspect-video rounded-2xl overflow-hidden glass-panel flex items-center justify-center border border-border/60 shadow-xl group">
          <!-- Simulated neural network/molecule graph using pure CSS for now, clean and fast -->
-         <div class="absolute inset-0 bg-cover bg-center mix-blend-luminosity opacity-80 group-hover:opacity-100 transition-opacity duration-500" style={`background-image: url('${base}Media/chemai_anim.gif')`}></div>
+         <div class="absolute inset-0 bg-cover bg-right mix-blend-luminosity opacity-80 group-hover:opacity-100 transition-opacity duration-500" style={`background-image: url('${base}Media/chemai_anim.gif')`}></div>
          <div class="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
       </div>
     </div>

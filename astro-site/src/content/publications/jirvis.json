@@ -1,7 +1,8 @@
 {
-  "title": "j-IR-vis: Vision model for infrared spectroscopy",
+  "title": "j-IR-vis: Vision model for infrared spectroscopy embeddings",
   "authors": "Rudra Sondhi, Edwin Chacko, Rodrigo A. Vargas-Hernández",
-  "year": 2024,
+  "year": 2026,
+  "month": 9,
   "abstract": "j-IR-vis is a vision-based neural network model designed to interpret infrared (IR) spectroscopy data. The model functions as a general-purpose spectral encoder that learns chemically interpretable representations directly from raw IR spectroscopy plots. Inspired by the ResNet family of vision models, it takes an IR spectrum image as input and performs multi-label classification of functional groups. Beyond classification, j-IR-vis embeds molecules into a spectroscopically informed similarity space, capturing relationships between molecules that are not always evident in standard fingerprint representations.",
   "links": [
     {

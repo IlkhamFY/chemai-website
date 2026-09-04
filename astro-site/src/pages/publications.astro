@@ -5,7 +5,13 @@ const rawBase = import.meta.env.BASE_URL;
 const base = rawBase.endsWith('/') ? rawBase.slice(0, -1) : rawBase;
 
 const allPublications = await getCollection('publications');
-const sortedPublications = allPublications.sort((a, b) => b.data.year - a.data.year);
+const sortedPublications = allPublications.sort((a, b) => {
+  if (b.data.year !== a.data.year) return b.data.year - a.data.year;
+  const aMonth = a.data.month || 0;
+  const bMonth = b.data.month || 0;
+  if (bMonth !== aMonth) return bMonth - aMonth;
+  return a.id.localeCompare(b.id);
+});
 ---
 
 <Layout

@@ -8,6 +8,7 @@ const publicationsCollection = defineCollection({
     title: z.string(),
     authors: z.string(),
     year: z.number(),
+    month: z.number().optional(),
     abstract: z.string(),
     links: z.array(
       z.object({

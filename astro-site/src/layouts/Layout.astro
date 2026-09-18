@@ -98,6 +98,11 @@ const jsonLd = JSON.stringify({
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <script is:inline>
+      if (location.protocol === 'http:' && location.hostname !== 'localhost' && !location.hostname.startsWith('127.')) {
+        location.replace('https://' + location.host + location.pathname + location.search + location.hash);
+      }
+    </script>
     <link rel="icon" type="image/svg+xml" href={`${baseUrl}/favicon.svg`} />
     <meta name="generator" content={Astro.generator} />
     <title>{documentTitle}</title>

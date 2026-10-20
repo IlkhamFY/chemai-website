@@ -1,0 +1,14 @@
+{
+  "title": "Experimental Validation of Universal Machine Learning Interatomic Potentials for Lithium-Ion Dynamics in Solid Electrolytes via 7Li NMR",
+  "authors": "Cameron A. Gurwell, Taiana L. E. Pereira, Mengyang Cui, Carlos A. Martins Junior, Gillian R. Goward, and Rodrigo A. Vargas-Hernández",
+  "year": 2026,
+  "month": 4,
+  "abstract": "A significant step toward electrification is the adoption of more sustainable energy storage technologies such as batteries. Safer alternatives to conventional solution-state lithium-ion batteries (LIBs) are solid-state batteries, which employ solid-state electrolytes (SSEs). These SSEs can exhibit lithium conductivities comparable to those of liquid electrolytes but are often discovered through experimental trial and error. Computational pipelines powered by universal machine-learning interatomic potentials (uMLIPs) offer a cheaper and scalable route to screen large datasets of candidate SSEs. This recent class of models enables rapid materials exploration compared to traditional quantum chemistry methods and ab initio molecular dynamics (AIMD). In this work, we assess the current capabilities of uMLIPs for solid-state lithium battery applications by systematically benchmarking their predictions against experimental solid-state nuclear magnetic resonance (ssNMR) diffusion data and density functional theory (DFT) calculations. We considered twelve different Li-based compounds, five ordered electrolytes, three disordered electrolytes, and four cathodes. This study includes eighteen different uMLIPs categorized into four main families, CHGNet, M3GNet, MACE, and ORB. Our results demonstrate that model performance is strongly dependent on both the underlying architecture and the chemical system under investigation. MACE- and ORB-based models consistently achieve higher accuracy across structural, energetic, and diffusion-related properties. However, the reliability of lithium diffusion predictions remains system-dependent, highlighting current limitations in the transferability of uMLIPs for complex materials. These findings provide a critical assessment of the readiness of uMLIPs for integration into computational pipelines aimed at accelerating the discovery of next-generation solid-state battery materials.",
+  "links": [
+    {
+      "label": "ChemRxiv",
+      "url": "https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002480/v1"
+    }
+  ],
+  "thumbnail": "/Media/Papers_Thumbnails/umlip-li-nmr.png"
+}

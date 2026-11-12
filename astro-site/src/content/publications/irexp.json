@@ -1,0 +1,13 @@
+{
+  "title": "IRexp: experimental infrared band lists for organic compounds mined from the chemistry literature",
+  "authors": "Ilkham Yabbarov, Rudra Sondhi, Rodrigo A. Vargas-Hern\u00e1ndez",
+  "year": 2026,
+  "month": 11,
+  "abstract": "Machine-learning models for infrared (IR) spectroscopy are often trained on computed spectra, yet simulated spectra differ from measured ones, and large, open experimental IR datasets remain scarce. IRexp is an open collection of 230,946 experimental IR band lists extracted from 19,859 open-access articles and their supporting information. In total, 96,973 records are linked to a resolved structure, and every record keeps its source identifier and licence. The dataset can be searched by structure, IR band position and source article on its website.",
+  "links": [
+    { "label": "Website", "url": "https://chemai-lab.com/irexp/" },
+    { "label": "Dataset", "url": "https://huggingface.co/datasets/ilkhamfy/IRexp" },
+    { "label": "Zenodo", "url": "https://doi.org/10.5281/zenodo.24117617" }
+  ],
+  "thumbnail": "/Media/Papers_Thumbnails/irexp.png"
+}

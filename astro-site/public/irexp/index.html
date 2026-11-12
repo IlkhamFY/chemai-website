@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IRexp explorer</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="RDKit_minimal.js"></script>
+<script src="https://jsme-editor.github.io/dist/jsme/jsme.nocache.js"></script>
+</head>
+<body>
+<main>
+  <header>
+    <h1>IRexp</h1>
+    <a class="lab" href="https://chemai-lab.com/" target="_blank" rel="noopener" aria-label="ChemAI Lab, McMaster University">
+      <span class="lab-chem">CHEM<span>.</span>AI</span>
+      <span class="lab-bar" aria-hidden="true"></span>
+      <span class="lab-sub" aria-hidden="true"><span>L</span><span>A</span><span>B</span><span>O</span><span>R</span><span>A</span><span>T</span><span>O</span><span>R</span><span>Y</span></span>
+    </a>
+    <p class="lede" id="lede">Experimental infrared band lists from open literature</p>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <a role="tab" data-tab="structure" class="on">Structure</a>
+    <a role="tab" data-tab="bands">IR bands</a>
+    <a role="tab" data-tab="text">Source or name</a>
+    <a role="tab" data-tab="explore">Explore</a>
+  </nav>
+
+  <section id="tab-structure" class="pane on">
+    <div class="cols">
+      <div class="col">
+        <label for="smiles">SMILES</label>
+        <input id="smiles" type="text" placeholder="e.g. O=Cc1ccccc1" autocomplete="off" spellcheck="false">
+        <div class="toggle" id="mode">
+          <a data-v="similarity" class="on">similarity</a><a data-v="substructure">substructure</a><a data-v="exact">exact</a>
+        </div>
+        <div class="examples">Examples:
+          <a data-smi="O=Cc1ccccc1">benzaldehyde</a>
+          <a data-smi="CC(C)Cc1ccc(cc1)C(C)C(=O)O">ibuprofen</a>
+          <a data-smi="Cn1cnc2c1c(=O)n(C)c(=O)n2C">caffeine</a>
+          <a data-smi="c1ccc2[nH]ccc2c1">indole</a>
+        </div>
+        <button id="go-structure">Search</button>
+      </div>
+      <div class="col">
+        <div id="jsme"></div>
+        <div class="examples"><span>Drawing fills the SMILES field.</span> <a id="clear-drawing">clear</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tab-bands" class="pane">
+    <label for="bands">Wavenumbers (cm⁻¹)</label>
+    <input id="bands" type="text" placeholder="e.g. 1715, 1600, 1450" autocomplete="off">
+    <label for="tol">Tolerance ± <span id="tolv">5</span> cm⁻¹</label>
+    <input id="tol" type="range" min="1" max="30" value="5">
+    <button id="go-bands">Search</button>
+  </section>
+
+  <section id="tab-text" class="pane">
+    <label for="text">Query</label>
+    <input id="text" type="text" placeholder="DOI, PMCID, or part of a compound name" autocomplete="off">
+    <div class="toggle" id="field"><a data-v="source" class="on">source</a><a data-v="name">name</a></div>
+    <button id="go-text">Search</button>
+  </section>
+
+  <section id="tab-explore" class="pane">
+    <p class="overview" id="overview"></p>
+    <div class="charts" id="charts"></div>
+  </section>
+
+  <div class="tools">
+    <div class="toggle" id="lic"><a data-v="all" class="on">all licences</a><a data-v="open">CC-BY and CC0 only</a></div>
+    <a id="random">Random record</a>
+  </div>
+
+  <p class="summary" id="summary">Loading data…</p>
+  <p class="csv" id="csvline" hidden><a id="csv">Download results as CSV</a></p>
+  <div id="results"></div>
+
+  <footer>
+    Cite: <i>IRexp: A database of experimental infrared band lists from open literature</i>.
+    Data: <a href="https://doi.org/10.5281/zenodo.24117617" target="_blank" rel="noopener">doi:10.5281/zenodo.24117617</a> ·
+    <a href="https://huggingface.co/datasets/ilkhamfy/IRexp" target="_blank" rel="noopener">huggingface.co/datasets/ilkhamfy/IRexp</a> (rev 8e84ef0) ·
+    <a href="https://github.com/IlkhamFY/IRexp" target="_blank" rel="noopener">github.com/IlkhamFY/IRexp</a><br>
+    Band positions extracted from article text. Each record keeps its source licence: CC-BY and CC0 records may be reused with attribution;
+    records from no-derivatives sources are marked ND; CC-BY-NC records are for non-commercial use; CC-BY-SA records, including Chemotion, are share-alike.
+    Attribute each record through its DOI or PMCID. Structures on the deposit's quarantine list are not shown or searched.
+    Structure drawing: JSME Molecular Editor (Ertl and Bienfait); cheminformatics: RDKit.
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
